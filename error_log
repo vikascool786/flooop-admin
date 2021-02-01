@@ -1,0 +1,46 @@
+[25-Jan-2021 17:20:58 UTC] PHP Notice:  Undefined index: log_path in /home1/a1610nqz/public_html/flooopadmin/system/core/Log.php on line 127
+[25-Jan-2021 17:20:58 UTC] PHP Notice:  Undefined index: log_path in /home1/a1610nqz/public_html/flooopadmin/system/core/Log.php on line 127
+[25-Jan-2021 17:20:58 UTC] PHP Warning:  mkdir(): Invalid path in /home1/a1610nqz/public_html/flooopadmin/system/core/Log.php on line 131
+[25-Jan-2021 17:20:58 UTC] PHP Notice:  Undefined index: log_threshold in /home1/a1610nqz/public_html/flooopadmin/system/core/Log.php on line 138
+[25-Jan-2021 17:20:58 UTC] PHP Notice:  Undefined index: log_threshold in /home1/a1610nqz/public_html/flooopadmin/system/core/Log.php on line 142
+[25-Jan-2021 17:21:00 UTC] PHP Notice:  Undefined index: log_path in /home1/a1610nqz/public_html/flooopadmin/system/core/Log.php on line 127
+[25-Jan-2021 17:21:00 UTC] PHP Notice:  Undefined index: log_path in /home1/a1610nqz/public_html/flooopadmin/system/core/Log.php on line 127
+[25-Jan-2021 17:21:00 UTC] PHP Warning:  mkdir(): Invalid path in /home1/a1610nqz/public_html/flooopadmin/system/core/Log.php on line 131
+[25-Jan-2021 17:21:00 UTC] PHP Notice:  Undefined index: log_threshold in /home1/a1610nqz/public_html/flooopadmin/system/core/Log.php on line 138
+[25-Jan-2021 17:21:00 UTC] PHP Notice:  Undefined index: log_threshold in /home1/a1610nqz/public_html/flooopadmin/system/core/Log.php on line 142
+[25-Jan-2021 17:21:02 UTC] PHP Notice:  Undefined index: log_path in /home1/a1610nqz/public_html/flooopadmin/system/core/Log.php on line 127
+[25-Jan-2021 17:21:02 UTC] PHP Notice:  Undefined index: log_path in /home1/a1610nqz/public_html/flooopadmin/system/core/Log.php on line 127
+[25-Jan-2021 17:21:02 UTC] PHP Warning:  mkdir(): Invalid path in /home1/a1610nqz/public_html/flooopadmin/system/core/Log.php on line 131
+[25-Jan-2021 17:21:02 UTC] PHP Notice:  Undefined index: log_threshold in /home1/a1610nqz/public_html/flooopadmin/system/core/Log.php on line 138
+[25-Jan-2021 17:21:02 UTC] PHP Notice:  Undefined index: log_threshold in /home1/a1610nqz/public_html/flooopadmin/system/core/Log.php on line 142
+[25-Jan-2021 17:21:03 UTC] PHP Notice:  Undefined index: log_path in /home1/a1610nqz/public_html/flooopadmin/system/core/Log.php on line 127
+[25-Jan-2021 17:21:03 UTC] PHP Notice:  Undefined index: log_path in /home1/a1610nqz/public_html/flooopadmin/system/core/Log.php on line 127
+[25-Jan-2021 17:21:03 UTC] PHP Warning:  mkdir(): Invalid path in /home1/a1610nqz/public_html/flooopadmin/system/core/Log.php on line 131
+[25-Jan-2021 17:21:03 UTC] PHP Notice:  Undefined index: log_threshold in /home1/a1610nqz/public_html/flooopadmin/system/core/Log.php on line 138
+[25-Jan-2021 17:21:03 UTC] PHP Notice:  Undefined index: log_threshold in /home1/a1610nqz/public_html/flooopadmin/system/core/Log.php on line 142
+[25-Jan-2021 17:21:07 UTC] PHP Notice:  Undefined index: log_path in /home1/a1610nqz/public_html/flooopadmin/system/core/Log.php on line 127
+[25-Jan-2021 17:21:07 UTC] PHP Notice:  Undefined index: log_path in /home1/a1610nqz/public_html/flooopadmin/system/core/Log.php on line 127
+[25-Jan-2021 17:21:07 UTC] PHP Warning:  mkdir(): Invalid path in /home1/a1610nqz/public_html/flooopadmin/system/core/Log.php on line 131
+[25-Jan-2021 17:21:07 UTC] PHP Notice:  Undefined index: log_threshold in /home1/a1610nqz/public_html/flooopadmin/system/core/Log.php on line 138
+[25-Jan-2021 17:21:07 UTC] PHP Notice:  Undefined index: log_threshold in /home1/a1610nqz/public_html/flooopadmin/system/core/Log.php on line 142
+[25-Jan-2021 17:21:18 UTC] PHP Notice:  Undefined index: log_path in /home1/a1610nqz/public_html/flooopadmin/system/core/Log.php on line 127
+[25-Jan-2021 17:21:18 UTC] PHP Notice:  Undefined index: log_path in /home1/a1610nqz/public_html/flooopadmin/system/core/Log.php on line 127
+[25-Jan-2021 17:21:18 UTC] PHP Warning:  mkdir(): Invalid path in /home1/a1610nqz/public_html/flooopadmin/system/core/Log.php on line 131
+[25-Jan-2021 17:21:18 UTC] PHP Notice:  Undefined index: log_threshold in /home1/a1610nqz/public_html/flooopadmin/system/core/Log.php on line 138
+[25-Jan-2021 17:21:18 UTC] PHP Notice:  Undefined index: log_threshold in /home1/a1610nqz/public_html/flooopadmin/system/core/Log.php on line 142
+[25-Jan-2021 17:21:18 UTC] PHP Notice:  Undefined index: log_path in /home1/a1610nqz/public_html/flooopadmin/system/core/Log.php on line 127
+[25-Jan-2021 17:21:18 UTC] PHP Notice:  Undefined index: log_path in /home1/a1610nqz/public_html/flooopadmin/system/core/Log.php on line 127
+[25-Jan-2021 17:21:18 UTC] PHP Warning:  mkdir(): Invalid path in /home1/a1610nqz/public_html/flooopadmin/system/core/Log.php on line 131
+[25-Jan-2021 17:21:18 UTC] PHP Notice:  Undefined index: log_threshold in /home1/a1610nqz/public_html/flooopadmin/system/core/Log.php on line 138
+[25-Jan-2021 17:21:18 UTC] PHP Notice:  Undefined index: log_threshold in /home1/a1610nqz/public_html/flooopadmin/system/core/Log.php on line 142
+[25-Jan-2021 17:49:59 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function base_url() in /home1/a1610nqz/public_html/flooopadmin/index.php:111
+Stack trace:
+#0 {main}
+  thrown in /home1/a1610nqz/public_html/flooopadmin/index.php on line 111
+[25-Jan-2021 17:51:11 UTC] PHP Warning:  Use of undefined constant BASEPATH - assumed 'BASEPATH' (this will throw an Error in a future version of PHP) in /home1/a1610nqz/public_html/flooopadmin/index.php on line 111
+[25-Jan-2021 17:52:56 UTC] PHP Warning:  Use of undefined constant PROJECT_ROOT_PATH - assumed 'PROJECT_ROOT_PATH' (this will throw an Error in a future version of PHP) in /home1/a1610nqz/public_html/flooopadmin/index.php on line 540
+[25-Jan-2021 17:54:28 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home1/a1610nqz/public_html/flooopadmin/index.php on line 542
+[25-Jan-2021 17:54:30 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home1/a1610nqz/public_html/flooopadmin/index.php on line 542
+[25-Jan-2021 17:54:48 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home1/a1610nqz/public_html/flooopadmin/index.php on line 542
+[25-Jan-2021 17:55:05 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home1/a1610nqz/public_html/flooopadmin/index.php on line 542
+[25-Jan-2021 17:55:20 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home1/a1610nqz/public_html/flooopadmin/index.php on line 542

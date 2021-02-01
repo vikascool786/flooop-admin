@@ -1,0 +1,70 @@
+/*
+	Amit Dave
+	28 Oct 2020
+	for my friend Vineeta Wadhwa :)
+	
+
+*/
+
+.disp_none{display:none !important;}
+.disp_flex{display:flex;}
+.clr{clear:both}
+.fltlft{float:left}
+.fltrgt{float:right}
+.txtrgt{text-align:right !important}
+.txtlft{text-align:left !important}
+.txtcenter{text-align:center !important}
+.txtjustify{text-align:justify !important}
+.borderall{border:1px solid #666;}
+.bordernone{border:none !important;}
+.border-right{border-right:1px solid #ddd}
+.border-bottom{border-bottom:1px dotted #73b537}
+.borderRed{border:1px solid red !important}
+.posRel{position:relative}
+.posAbs{position:absolute}
+.margin0{margin:0px !important}
+.padding0{padding:0px !important}
+.marginauto{margin:0 auto;float:none;}
+.margintop10{margin-top:10px;}
+.margintop20{margin-top:20px;}
+.cursor_pointer{cursor:pointer;}
+.cursor_default{cursor:default;}
+.amdInput{ border: 1px solid #ddd;border-radius: 3px !important;height: 40px;}
+.width100{width:100% !important;}
+
+.red{color:red;}
+.green{color:green;}
+.black{color:#000;}
+.white{color:#fff;}
+
+.noData{text-align:center;font-size:16px;font-family:robo_bold;}
+
+.errorMsg{display:none;color:red;text-align:center}
+.successMsg{display:none;color:green;text-align:center}
+video{width: 100%;height: auto;}
+
+.error{color:red;}
+.required{color:red;}
+input{outline:none;}
+input:focus{outline:none;}
+.btn:focus{outline:none !important;}
+.btn:active{outline:none !important;}
+
+.btn_registerNow{ background: yellow none repeat scroll 0 0;
+    border: 1px solid #666;
+    cursor: pointer;
+    font-size: 44px;
+    padding: 10px;
+    position: absolute;
+    right: 40%;
+    top: 50px;
+    width: auto;}
+
+a:focus{outline:none;}
+.shadow{box-shadow:0 16px 26px -10px rgba(156, 39, 176, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(156, 39, 176, 0.2)}
+#float-whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+}
