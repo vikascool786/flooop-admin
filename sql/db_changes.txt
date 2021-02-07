@@ -1,0 +1,7 @@
+
+// To save the zoom access token for the connected users
+// this will show when user connected to zoom and when the token recently is updated
+ALTER TABLE `users`
+ADD `zoom_access_token` text COLLATE 'utf8_general_ci' NULL AFTER `phone`,
+ADD `zoom_connected_at` datetime NULL AFTER `zoom_access_token`,
+ADD `zoom_refreshed_at` datetime NULL AFTER `zoom_connected_at`;

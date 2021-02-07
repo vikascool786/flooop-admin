@@ -4,8 +4,11 @@ class Database{
     // specify your own database credentials
     private $host = "localhost";
     private $db_name = "a1610nqz_flooop";
-    private $username = "a1610nqz_flooop";
-    private $password = "Vineetaw1!";
+    /*private $username = "a1610nqz_flooop";
+    private $password = "Vineetaw1!";*/
+    // Bharat local
+    private $username = "root";
+    private $password = "root";
 	/*private $db_name = 'axomaxjq_flooop';
 	private $username = 'axomaxjq_flooop';
 	private $password = 'AnsFloopDb@102020';*/

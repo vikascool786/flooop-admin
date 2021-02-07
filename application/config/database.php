@@ -158,6 +158,16 @@ if($_SERVER['HTTP_HOST']=='localhost'){
 
 	$database = 'a1610nqz_flooop';
 
+}else if($_SERVER['HTTP_HOST']=='flooopadmin.local'){
+
+	$hostname = 'localhost';
+
+	$username = 'root';
+
+	$password = 'root';
+
+	$database = 'a1610nqz_flooop';
+
 }else if($_SERVER['HTTP_HOST']=='sh009.hostgator.tempwebhost.net'){
 
 	$hostname = 'localhost';

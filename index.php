@@ -541,7 +541,6 @@ switch (ENVIRONMENT)
 	defined('PROJECT_ROOT_PATH')
 
     || define('PROJECT_ROOT_PATH', realpath(dirname(__FILE__)));
-  print_r(PROJECT_ROOT_PATH);exit;
 	
 
 	// The path to the "views" directory
