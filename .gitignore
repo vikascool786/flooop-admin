@@ -42,3 +42,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 application/session/
+api/config/database.php
+api/config/core.php
+application/config/database.php
+application/core/MY_Controller.php
