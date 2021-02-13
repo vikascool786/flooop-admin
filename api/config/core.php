@@ -10,6 +10,13 @@ if($_SERVER['HTTP_HOST']=='localhost'){
 
 }
 
+if($_SERVER['HTTP_HOST']=='flooopadmin.local'){
+
+    define('APPLICATION_URL', 'http://flooopadmin.local/');
+    define('PROJECT_ROOT_PATH', '/var/www/html/flooop/flooop-admin/');
+    define('APPLICATION_URL_FRONT', 'http://flooopadmin.local/');
+}
+
 if($_SERVER['HTTP_HOST']=='answebtechnologies.in' || $_SERVER['HTTP_HOST']=='www.answebtechnologies.in'){
 
 	if($_SERVER['HTTP_HOST']=='answebtechnologies.in'){

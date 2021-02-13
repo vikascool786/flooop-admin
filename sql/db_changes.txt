@@ -5,3 +5,14 @@ ALTER TABLE `users`
 ADD `zoom_access_token` text COLLATE 'utf8_general_ci' NULL AFTER `phone`,
 ADD `zoom_connected_at` datetime NULL AFTER `zoom_access_token`,
 ADD `zoom_refreshed_at` datetime NULL AFTER `zoom_connected_at`;
+
+
+// Save the zoom details for the created event
+ALTER TABLE `events`
+ADD `zoom_id` varchar(200) COLLATE 'latin1_swedish_ci' NULL AFTER `event_question`,
+ADD `zoom_password` varchar(50) COLLATE 'latin1_swedish_ci' NULL AFTER `zoom_id`;
+ALTER TABLE `events`
+ADD `zoom_url` varchar(500) COLLATE 'latin1_swedish_ci' NULL AFTER `zoom_password`;
+
+// Change the datatype of events-timezone
+ALTER TABLE `events` CHANGE `timezone` `timezone` int(10) NULL AFTER `event_duration`;

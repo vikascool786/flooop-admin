@@ -22,6 +22,7 @@ include_once '../objects/event.php';
 include_once '../objects/user.php';
 include_once '../objects/event_cat_match.php';
 include_once '../objects/event_lang_match.php';
+include_once '../objects/ZoomApp.php';
   
 $database = new Database();
 $db = $database->getConnection();
@@ -30,10 +31,12 @@ $event = new Event($db);
 $user = new User($db);
 $ecm = new EventCatMatch($db);
 $elm = new EventLangMatch($db);
+$zoomApp = new ZoomApp();
   
 // get posted data
 //$data = json_decode(file_get_contents("php://input"));
 $data = $_POST; $data = json_encode($data); $data = json_decode($data);
+array_map('trim', $data);
 // get jwt
 $jwt=isset($data->jwt) ? $data->jwt : "";
 //print_r($data); exit;  
@@ -157,6 +160,14 @@ if(
     // create the event
     //if($event->create())
 	if($result){
+
+        // Create event on zoom
+        try {
+            $zoomData = $zoomApp->updateMeetingOnZoom($userId, $data);
+        } catch (Exception $e) {
+
+        }
+
   		$event_id = $result; 
 		// save 'event_cat_match' table
 		if($data->event_categories!=''){

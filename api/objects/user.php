@@ -30,7 +30,10 @@ class User{
 	public $last_name;
 	public $company;
 	public $phone;
-	
+	public $zoom_access_token;
+	public $zoom_connected_at;
+	public $zoom_refreshed_at;
+
     // constructor with $db as database connection
     public function __construct($db){
         $this->conn = $db;
@@ -42,6 +45,9 @@ class User{
 		$this->first_name = NULL;
 		$this->last_name = NULL;
 		$this->profilephoto = NULL;
+		$this->zoom_access_token = NULL;
+		$this->zoom_connected_at = NULL;
+		$this->zoom_refreshed_at = NULL;
     }
 	
 	// read user
@@ -249,6 +255,39 @@ class User{
 	
 		return false;
 	}
+
+    /**
+     * update a user's access token
+     *
+     * @return bool
+     */
+    public function updateAccessToken()
+    {
+
+        // Update query statement
+        $query = "UPDATE " . $this->table_name . "
+				SET
+					zoom_access_token = :zoom_access_token,
+					zoom_refreshed_at = :zoom_refreshed_at
+				WHERE id = :id";
+
+        // Prepare the query
+        $stmt = $this->conn->prepare($query);
+
+        // Bind the updated values
+        $stmt->bindParam(':zoom_access_token', $this->zoom_access_token);
+        $stmt->bindParam(':zoom_refreshed_at', $this->zoom_refreshed_at);
+
+        // Bind with the unique user Id which records are updating with
+        $stmt->bindParam(':id', $this->id);
+
+        // Execute the query
+        if ($stmt->execute()) {
+            return true;
+        }
+
+        return false;
+    }
 	
 	public function change_password(){
 	

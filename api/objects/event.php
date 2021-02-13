@@ -28,10 +28,16 @@ class Event{
 	public $event_cohost;
 	public $event_question;
 	public $status;
-  
+	public $zoom_id;
+	public $zoom_password;
+	public $zoom_url;
+
     // constructor with $db as database connection
     public function __construct($db){
         $this->conn = $db;
+        $this->zoom_id = null;
+        $this->zoom_password = null;
+        $this->zoom_url = null;
     }
 	
 	// read products
@@ -162,7 +168,8 @@ class Event{
 					event_attendees=:event_attendees,
 					attendees_can_invite=:attendees_can_invite,display_attendees=:display_attendees,event_cohost=:event_cohost,
 					event_question=:event_question,
-					 status=:status,addDate=:addDate,lastModified=:lastModified";
+					 status=:status,addDate=:addDate,lastModified=:lastModified,
+					 zoom_id=:zoom_id,zoom_password=:zoom_password,zoom_url=:zoom_url";
 	  
 		// prepare query
 		$stmt = $this->conn->prepare($query);
@@ -174,8 +181,16 @@ class Event{
 		$this->event_tags=htmlspecialchars(strip_tags($this->event_tags));
 		$this->event_image=htmlspecialchars(strip_tags($this->event_image));
 		//$this->created=htmlspecialchars(strip_tags($this->created));
-	  
-		// bind values
+
+        preg_match_all('!\d+!', $this->event_duration, $matches);
+        $this->event_duration = $matches[0][0];
+
+        $this->event_attendees = ($this->event_attendees == "") ? NULL : $this->event_attendees;
+        $this->attendees_can_invite = ($this->attendees_can_invite == "") ? NULL : $this->attendees_can_invite;
+        $this->display_attendees = ($this->display_attendees == "") ? NULL : $this->display_attendees;
+
+
+        // bind values
 		$stmt->bindParam(":event_title", $this->event_title);
 		$stmt->bindParam(":host_id", $this->host_id);
 		$stmt->bindParam(":event_cost", $this->event_cost);
@@ -199,7 +214,10 @@ class Event{
 		$stmt->bindParam(":status", $this->status);
 		$stmt->bindParam(":addDate", $this->addDate);
 		$stmt->bindParam(":lastModified", $this->lastModified);
-	  
+        $stmt->bindParam(":zoom_id", $this->zoom_id);
+        $stmt->bindParam(":zoom_password", $this->zoom_password);
+        $stmt->bindParam(":zoom_url", $this->zoom_url);
+
 		// execute query
 		if($stmt->execute()){
 			//$event_id = $stmt->insert_id; 
@@ -240,7 +258,14 @@ class Event{
 		$this->event_tags=htmlspecialchars(strip_tags($this->event_tags));
 		$this->event_image=htmlspecialchars(strip_tags($this->event_image));
 		//$this->created=htmlspecialchars(strip_tags($this->created));
-	  
+
+        preg_match_all('!\d+!', $this->event_duration, $matches);
+        $this->event_duration = $matches[0][0];
+
+        $this->event_attendees = ($this->event_attendees == "" || $this->event_attendees == "null") ? NULL : $this->event_attendees;
+        $this->attendees_can_invite = ($this->attendees_can_invite == "" || $this->attendees_can_invite == "null") ? NULL : $this->attendees_can_invite;
+        $this->display_attendees = ($this->display_attendees == "" || $this->display_attendees == "null") ? NULL : $this->display_attendees;
+
 		// bind values
 		$stmt->bindParam(":event_title", $this->event_title);
 		$stmt->bindParam(":host_id", $this->host_id);
@@ -265,9 +290,9 @@ class Event{
 		$stmt->bindParam(":status", $this->status);
 		//$stmt->bindParam(":addDate", $this->addDate);
 		$stmt->bindParam(":lastModified", $this->lastModified);
-		
+
 		$stmt->bindParam(":id", $this->id);
-	  
+
 		// execute query
 		if($stmt->execute()){
 			//$event_id = $stmt->insert_id; 
