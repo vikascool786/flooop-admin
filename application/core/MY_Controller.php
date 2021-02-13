@@ -18,8 +18,7 @@ class MY_Controller extends CI_Controller
         $this->data['plugins_dir'] = $this->config->item('plugins_dir');
         $this->data['avatar_dir'] = $this->config->item('avatar_dir');
 
-        $this->config->config["base_url"]="http://flooopadmin.local/";
-        $this->config->config["base_url"]="https://c2a2330d8590.ngrok.io/";
+        $this->config->config["base_url"]="http://floooplife.com/flooopadmin/";
         //echo base_url();exit;
         /* Any mobile device (phones or tablets) */
         if ($this->mobile_detect->isMobile())
