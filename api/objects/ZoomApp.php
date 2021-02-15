@@ -1,6 +1,7 @@
 <?php
 
 include_once __DIR__ . '../objects/user.php';
+include_once __DIR__ . '../objects/timezone.php';
 include_once __DIR__ . '../config/database.php';
 require_once __DIR__ . '/../../vendor/autoload.php';
 
@@ -79,6 +80,9 @@ class ZoomApp
         }
 
         try {
+
+            $zoomTimeZone = $this->getTimeZone($data->event_start_timezone);
+
             $client = new GuzzleHttp\Client(['base_uri' => 'https://api.zoom.us']);
 
             // if you have user id of user than change it with me in url
@@ -89,10 +93,10 @@ class ZoomApp
                 'json'    => [
                     "topic"      => $data->event_title,
                     "type"       => 2,
-                    "start_time" => $eventDatetime,                // meeting start time
-                    "duration"   => "$data->event_duration",       // minutes
+                    "start_time" => $eventDatetime,                 // meeting start time
+                    "duration"   => "$data->event_duration",        // minutes
                     "password"   => $randomPassword,                // meeting password
-                    "timezone" => $data->event_start_timezone_title
+                    "timezone"   => $zoomTimeZone
                 ],
             ]);
 
@@ -101,6 +105,8 @@ class ZoomApp
         } catch (Exception $e) {
             return null;
         }
+
+        return null;
     }
 
     /**
@@ -167,12 +173,14 @@ class ZoomApp
 
         }
 
-        if ($data->zoom_id!=""){
+        if ($data->zoom_id != "") {
             try {
+                $zoomTimeZone = $this->getTimeZone($data->event_start_timezone);
+
                 $client = new GuzzleHttp\Client(['base_uri' => 'https://api.zoom.us']);
 
                 // if you have user id of user than change it with me in url
-                $response = $client->request('PATCH', '/v2/meetings/'.$data->zoom_id, [
+                $response = $client->request('PATCH', '/v2/meetings/' . $data->zoom_id, [
                     "headers" => [
                         "Authorization" => "Bearer $accessToken"
                     ],
@@ -181,7 +189,7 @@ class ZoomApp
                         "type"       => 2,
                         "start_time" => $eventDatetime,                // meeting start time
                         "duration"   => "$data->event_duration",       // minutes
-                        "timezone" => $data->event_start_timezone_title
+                        "timezone"   => $zoomTimeZone
                     ],
                 ]);
 
@@ -252,10 +260,11 @@ class ZoomApp
 
             // If access token updated successfully into the storage
             if ($this->updateAccessTokenOnZoom($userId, $accessToken)) {
-                return $accessToken;
+                return json_decode($accessToken);
             }
         } catch (Exception $e) {
 
+            return null;
         }
 
         return null;
@@ -288,6 +297,34 @@ class ZoomApp
         }
 
 
+        return false;
+    }
+
+    /**
+     * Get the time zone value by ID
+     *
+     * @param $timeZoneId
+     * @return bool
+     */
+    private function getTimeZone($timeZoneId)
+    {
+        try {
+            $database = new Database();
+            $db = $database->getConnection();
+
+            $timeZone = new User($db);
+            $stmtTimeZone = $timeZone->readTimeZone(['id' => $timeZoneId]);
+            $rowTimeZone = $stmtTimeZone->fetch(PDO::FETCH_ASSOC);
+
+            if (!is_null($rowTimeZone)) {
+                return $rowTimeZone['value'];
+            }
+
+        } catch (Exception $e) {
+
+            return false;
+        }
+        
         return false;
     }
 

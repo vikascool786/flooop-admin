@@ -64,6 +64,36 @@ class User{
 	  
 		return $stmt;
 	}
+
+    /**
+     * Get the timezone details
+     *
+     * @param array $options
+     * @return mixed
+     */
+    function readTimeZone($options = [])
+    {
+
+        $where = '';
+        if (isset($options['id'])) {
+            $id = filter_var($options['id'], FILTER_SANITIZE_NUMBER_INT);
+            $where = 'where id = :id';
+        }
+
+        // select all query
+        $query = "SELECT * FROM event_timezone " . $where;
+        //echo $query;
+        // prepare query statement
+        $stmt = $this->conn->prepare($query);
+
+        if (isset($options['id']))
+            $stmt->bindParam(':id', $id);
+
+        // execute query
+        $stmt->execute();
+
+        return $stmt;
+    }
 	
 	// read user
 	function readSingle($options=[])
