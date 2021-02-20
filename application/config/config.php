@@ -18,7 +18,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 
-$config['base_url'] = APP_URL . 'flooopadmin/';
+//$config['base_url'] = APP_URL . 'flooopadmin/';
+$config['base_url'] = APP_URL;
 $config['front_url'] = APP_URL;
 
 if ($_SERVER['HTTP_HOST'] == 'flooopadmin.local') {
