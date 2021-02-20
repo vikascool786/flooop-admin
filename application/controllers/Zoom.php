@@ -17,7 +17,7 @@ class Zoom extends Public_Controller
 
         require_once __DIR__ . '/../../vendor/autoload.php';
 
-        $baseURL = $this->config->config["base_url"];
+        $frontURL = $this->config->config["front_url"];
         if (isset($_GET['code']) && !empty($_GET['code'])){
             try {
                 $client = new GuzzleHttp\Client(['base_uri' => 'https://zoom.us']);
@@ -49,12 +49,12 @@ class Zoom extends Public_Controller
                 $this->db->update('users', $data);
 
             } catch (Exception $e) {
-                header("Location: ".$baseURL."/#/my-account?zoom_status=error");
+                header("Location: ".$frontURL."/#/my-account?zoom_status=error");
             }
 
-            header("Location: ".$baseURL."/#/my-account?zoom_status=success");
+            header("Location: ".$frontURL."/#/my-account?zoom_status=success");
         }
 
-        header("Location: ".$baseURL."/#/my-account?zoom_status=error");
+        header("Location: ".$frontURL."/#/my-account?zoom_status=error");
     }
 }

@@ -55,6 +55,7 @@ if($_SERVER['HTTP_HOST']=='idealfitness.in' || $_SERVER['HTTP_HOST']=='www.ideal
 
 
 $config['base_url']	= APP_URL;
+$config['front_url']	= APP_URL;
 define('APPLICATION_URL', APP_URL);
 /*
 |--------------------------------------------------------------------------
