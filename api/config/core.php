@@ -1,72 +1,11 @@
 <?php
 
 
+$appURL = ($_SERVER['SERVER_PORT'] == 443 ? 'https' : 'http') . "://{$_SERVER['SERVER_NAME']}";
 
-if($_SERVER['HTTP_HOST']=='localhost'){
-
-	define('APPLICATION_URL', 'http://localhost/flooopadmin/');
-
-	define('PROJECT_ROOT_PATH', 'D:\xampp\htdocs\flooopadmin');
-
-}
-
-if($_SERVER['HTTP_HOST']=='answebtechnologies.in' || $_SERVER['HTTP_HOST']=='www.answebtechnologies.in'){
-
-	if($_SERVER['HTTP_HOST']=='answebtechnologies.in'){
-
-		define('APPLICATION_URL', 'https://answebtechnologies.in/flooopadmin/');
-
-		define('APPLICATION_URL_FRONT', 'https://answebtechnologies.in/flooop/');
-
-	}
-
-	if($_SERVER['HTTP_HOST']=='www.answebtechnologies.in'){
-
-		define('APPLICATION_URL', 'https://www.answebtechnologies.in/flooopadmin/');
-
-		define('APPLICATION_URL_FRONT', 'https://www.answebtechnologies.in/flooop/');
-
-	}
-
-	define('PROJECT_ROOT_PATH', '/home/axomaxjq/domains/answebtechnologies.in/public_html/flooopadmin');
-
-	
-
-	//define('APPLICATION_URL_FRONT', 'https://dave_amit.gitlab.io/flooop/');
-
-	
-
-}
-
-if($_SERVER['HTTP_HOST']=='idealfitness.in' || $_SERVER['HTTP_HOST']=='www.idealfitness.in'){
-
-	if($_SERVER['HTTP_HOST']=='idealfitness.in'){
-
-		define('APPLICATION_URL', 'http://idealfitness.in/');
-
-	}
-
-	if($_SERVER['HTTP_HOST']=='www.idealfitness.in'){
-
-		define('APPLICATION_URL', 'http://www.idealfitness.in/');
-
-	}
-
-}
-
-if($_SERVER['HTTP_HOST']=='floooplife.com'){
-
-	if($_SERVER['HTTP_HOST']=='floooplife.com'){
-
-		define('APPLICATION_URL', 'http://floooplife.com/flooopadmin/');
-		define('PROJECT_ROOT_PATH', '/home1/a1610nqz/public_html/flooopadmin/');
-		define('APPLICATION_URL_FRONT', 'http://floooplife.com/');
-
-	}
-
-}
-
-
+define('APPLICATION_URL', $appURL.'/flooopadmin/');
+define('PROJECT_ROOT_PATH', '/home1/a1610nqz/public_html/flooopadmin/');
+define('APPLICATION_URL_FRONT', $appURL.'/');
 
 // set your default time-zone
 
