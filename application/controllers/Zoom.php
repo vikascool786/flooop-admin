@@ -18,6 +18,7 @@ class Zoom extends Public_Controller
         require_once __DIR__ . '/../../vendor/autoload.php';
 
         $frontURL = $this->config->config["front_url"];
+
         if (isset($_GET['code']) && !empty($_GET['code'])){
             try {
                 $client = new GuzzleHttp\Client(['base_uri' => 'https://zoom.us']);

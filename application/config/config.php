@@ -17,46 +17,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | environments.
 |
 */
-$config['base_url'] = '';
-if($_SERVER['HTTP_HOST']=='localhost'){
-	$config['base_url']	= 'http://localhost/flooopadmin/';
-	define('APPLICATION_URL', 'http://localhost/flooopadmin/');
-}
-if($_SERVER['HTTP_HOST']=='answebtechnologies.in' || $_SERVER['HTTP_HOST']=='www.answebtechnologies.in'){
-	if($_SERVER['HTTP_HOST']=='answebtechnologies.in'){
-		$config['base_url']	= 'https://answebtechnologies.in/flooopadmin/';
-		define('APPLICATION_URL', 'https://answebtechnologies.in/flooopadmin/');
-	}
-	if($_SERVER['HTTP_HOST']=='www.answebtechnologies.in'){
-		$config['base_url']	= 'https://www.answebtechnologies.in/flooopadmin/';
-		define('APPLICATION_URL', 'https://www.answebtechnologies.in/flooopadmin/');
-	}
-}
-if($_SERVER['HTTP_HOST']=='http://sh009.hostgator.tempwebhost.net/~a1610nqz' || $_SERVER['HTTP_HOST']=='www.http://sh009.hostgator.tempwebhost.net/~a1610nqz'){
-	if($_SERVER['HTTP_HOST']=='http://sh009.hostgator.tempwebhost.net/~a1610nqz'){
-		$config['base_url']	= 'https://http://sh009.hostgator.tempwebhost.net/~a1610nqz/flooopadmin/';
-		define('APPLICATION_URL', 'https://http://sh009.hostgator.tempwebhost.net/~a1610nqz/flooopadmin/');
-	}
-	if($_SERVER['HTTP_HOST']=='www.http://sh009.hostgator.tempwebhost.net/~a1610nqz'){
-		$config['base_url']	= 'https://www.http://sh009.hostgator.tempwebhost.net/~a1610nqz/flooopadmin/';
-		define('APPLICATION_URL', 'https://www.http://sh009.hostgator.tempwebhost.net/~a1610nqz/flooopadmin/');
-	}
-}
-if($_SERVER['HTTP_HOST']=='idealfitness.in' || $_SERVER['HTTP_HOST']=='www.idealfitness.in'){
-	if($_SERVER['HTTP_HOST']=='idealfitness.in'){
-		$config['base_url']	= 'http://idealfitness.in/';
-		define('APPLICATION_URL', 'http://idealfitness.in/');
-	}
-	if($_SERVER['HTTP_HOST']=='www.idealfitness.in'){
-		$config['base_url']	= 'http://www.idealfitness.in/';
-		define('APPLICATION_URL', 'http://www.idealfitness.in/');
-	}
+
+$config['base_url'] = APP_URL . 'flooopadmin/';
+$config['front_url'] = APP_URL;
+
+if ($_SERVER['HTTP_HOST'] == 'flooopadmin.local') {
+    $config['base_url'] = APP_URL;
 }
 
-
-$config['base_url']	= APP_URL;
-$config['front_url']	= APP_URL;
-define('APPLICATION_URL', APP_URL);
+define('APPLICATION_URL', $config['base_url']);
 /*
 |--------------------------------------------------------------------------
 | Index File
