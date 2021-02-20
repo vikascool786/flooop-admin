@@ -46,3 +46,4 @@ application/session/
 #api/config/core.php
 #application/config/database.php
 #application/core/MY_Controller.php
+upload/
